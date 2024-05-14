@@ -11,5 +11,10 @@ Mulai dari:
 4. Konversi Waktu
 5. Konversi Kode Morse
 6. Konversi Kode Ketuk
-7. Konversi Biner-Desimal-Heksadesimal
+7. Konversi Biner-Desimal-Heksadtesimal
 8. Konversi Suhu
+
+
+B."Kopi"
+
+Ini adalah website coffee shop yang bernama "Moreau Coffee" terdapat php dimana digunakan untuk meminta order secara online.
