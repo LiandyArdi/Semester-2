@@ -1,5 +1,6 @@
-Semester 2
-1."Unit Converter"
+Semester 2 :
+
+A."Unit Converter"
 
 Ini adalah aplikasi untuk mengubah unit. Saat ini, ada 8 jenis konversi yang dapat dilakukan.
 
