@@ -79,118 +79,17 @@ public class Time extends JFrame {
         timecalculate.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                value = Float.parseFloat(String.valueOf(timefromtext.getText()));
-                if (timefromunit.getSelectedIndex() == 0) { //if the fromunitcombo 1st entry is selected by the user, then
-                	if (timetounit.getSelectedIndex() == 0) { //since there are two combo boxes in which the user will chose units, inside the 1st if, we are going to add 3 more if's whose conditions would be the selected entries of the second combobox. So the condition is if along with the from combobox 1st entry is chosen and in to combo box 1st entry is chosen then.
-                        timetotext.setText(String.valueOf(value));
-                    }
-                	
-                	if (timetounit.getSelectedIndex() == 1) { //since there are two combo boxes in which the user will chose units, inside the 1st if, we are going to add 3 more if's whose conditions would be the selected entries of the second combobox. So the condition is if along with the from combobox 1st entry is chosen and in to combo box 1st entry is chosen then.
-                        timetotext.setText(String.valueOf(value * 7));
-                    }
+                    value = Float.parseFloat(timefromtext.getText());
+                    int fromIndex = timefromunit.getSelectedIndex();
+                    int toIndex = timetounit.getSelectedIndex();
 
-                    if (timetounit.getSelectedIndex() == 2) { //since there are two combo boxes in which the user will chose units, inside the 1st if, we are going to add 3 more if's whose conditions would be the selected entries of the second combobox. So the condition is if along with the from combobox 1st entry is chosen and in to combo box 1st entry is chosen then.
-                        timetotext.setText(String.valueOf(value * 7 * 24)); //* is used for multiplication.
-                    }
-
-                    if (timetounit.getSelectedIndex() == 3) { //since there are two combo boxes in which the user will chose units, inside the 1st if, we are going to add 3 more if's whose conditions would be the selected entries of the second combobox. So the condition is if along with the from combobox 1st entry is chosen and in to combo box 1st entry is chosen then.
-                        timetotext.setText(String.valueOf(value * 7 * 24 * 60)); //* is used for multiplication.
-                    }
+                    // Faktor konversi (mengikuti urutan units yang ada)
+                    float[] conversionFactors = {1, 1/7f, 1/168f, 1/10080f, 1/604800f};
                     
-                    if (timetounit.getSelectedIndex() == 4) { //since there are two combo boxes in which the user will chose units, inside the 1st if, we are going to add 3 more if's whose conditions would be the selected entries of the second combobox. So the condition is if along with the from combobox 1st entry is chosen and in to combo box 1st entry is chosen then.
-                        timetotext.setText(String.valueOf(value * 7 * 24 * 60 * 60)); //* is used for multiplication.
-                    }
-
-                }
-                if (timefromunit.getSelectedIndex() == 1) { //if the fromunitcombo 1st entry is selected by the user, then
-                	if (timetounit.getSelectedIndex() == 0) { //since there are two combo boxes in which the user will chose units, inside the 1st if, we are going to add 3 more if's whose conditions would be the selected entries of the second combobox. So the condition is if along with the from combobox 1st entry is chosen and in to combo box 1st entry is chosen then.
-                        timetotext.setText(String.valueOf(value / 7));
-                    }
-                	
-                	if (timetounit.getSelectedIndex() == 1) { //since there are two combo boxes in which the user will chose units, inside the 1st if, we are going to add 3 more if's whose conditions would be the selected entries of the second combobox. So the condition is if along with the from combobox 1st entry is chosen and in to combo box 1st entry is chosen then.
-                        timetotext.setText(String.valueOf(value));
-                    }
-
-                    if (timetounit.getSelectedIndex() == 2) { //since there are two combo boxes in which the user will chose units, inside the 1st if, we are going to add 3 more if's whose conditions would be the selected entries of the second combobox. So the condition is if along with the from combobox 1st entry is chosen and in to combo box 1st entry is chosen then.
-                        timetotext.setText(String.valueOf(value * 24)); //* is used for multiplication.
-                    }
-
-                    if (timetounit.getSelectedIndex() == 3) { //since there are two combo boxes in which the user will chose units, inside the 1st if, we are going to add 3 more if's whose conditions would be the selected entries of the second combobox. So the condition is if along with the from combobox 1st entry is chosen and in to combo box 1st entry is chosen then.
-                        timetotext.setText(String.valueOf(value * 24 * 60)); //* is used for multiplication.
-                    }
-                    
-                    if (timetounit.getSelectedIndex() == 4) { //since there are two combo boxes in which the user will chose units, inside the 1st if, we are going to add 3 more if's whose conditions would be the selected entries of the second combobox. So the condition is if along with the from combobox 1st entry is chosen and in to combo box 1st entry is chosen then.
-                        timetotext.setText(String.valueOf(value * 24 * 60 * 60)); //* is used for multiplication.
-                    }
-
-                }
-                if (timefromunit.getSelectedIndex() == 2) { //if the fromunitcombo 1st entry is selected by the user, then
-                    if (timetounit.getSelectedIndex() == 0) { //since there are two combo boxes in which the user will chose units, inside the 1st if, we are going to add 3 more if's whose conditions would be the selected entries of the second combobox. So the condition is if along with the from combobox 1st entry is chosen and in to combo box 1st entry is chosen then.
-                        timetotext.setText(String.valueOf(value /24 /7));
-                    }
-
-                    if (timetounit.getSelectedIndex() == 1) { //since there are two combo boxes in which the user will chose units, inside the 1st if, we are going to add 3 more if's whose conditions would be the selected entries of the second combobox. So the condition is if along with the from combobox 1st entry is chosen and in to combo box 1st entry is chosen then.
-                        timetotext.setText(String.valueOf(value /24)); //* is used for multiplication.
-                    }
-
-                    if (timetounit.getSelectedIndex() == 2) { //since there are two combo boxes in which the user will chose units, inside the 1st if, we are going to add 3 more if's whose conditions would be the selected entries of the second combobox. So the condition is if along with the from combobox 1st entry is chosen and in to combo box 1st entry is chosen then.
-                        timetotext.setText(String.valueOf(value)); //* is used for multiplication.
-                    }
-                    if (timetounit.getSelectedIndex() == 3) { //since there are two combo boxes in which the user will chose units, inside the 1st if, we are going to add 3 more if's whose conditions would be the selected entries of the second combobox. So the condition is if along with the from combobox 1st entry is chosen and in to combo box 1st entry is chosen then.
-                        timetotext.setText(String.valueOf(value * 60)); //* is used for multiplication.
-                    }
-                    if (timetounit.getSelectedIndex() == 4) { //since there are two combo boxes in which the user will chose units, inside the 1st if, we are going to add 3 more if's whose conditions would be the selected entries of the second combobox. So the condition is if along with the from combobox 1st entry is chosen and in to combo box 1st entry is chosen then.
-                        timetotext.setText(String.valueOf(value * 60 * 60)); //* is used for multiplication.
-                    }
-
-                }
-
-                if (timefromunit.getSelectedIndex() == 3) { //if the fromunitcombo 1st entry is selected by the user, then
-                    if (timetounit.getSelectedIndex() == 0) { //since there are two combo boxes in which the user will chose units, inside the 1st if, we are going to add 3 more if's whose conditions would be the selected entries of the second combobox. So the condition is if along with the from combobox 1st entry is chosen and in to combo box 1st entry is chosen then.
-                        timetotext.setText(String.valueOf(value /60 /24 /7));
-                    }
-
-                    if (timetounit.getSelectedIndex() == 1) { //since there are two combo boxes in which the user will chose units, inside the 1st if, we are going to add 3 more if's whose conditions would be the selected entries of the second combobox. So the condition is if along with the from combobox 1st entry is chosen and in to combo box 1st entry is chosen then.
-                        timetotext.setText(String.valueOf(value /60 /24)); //* is used for multiplication.
-                    }
-
-                    if (timetounit.getSelectedIndex() == 2) { //since there are two combo boxes in which the user will chose units, inside the 1st if, we are going to add 3 more if's whose conditions would be the selected entries of the second combobox. So the condition is if along with the from combobox 1st entry is chosen and in to combo box 1st entry is chosen then.
-                        timetotext.setText(String.valueOf(value /60)); //* is used for multiplication.
-                    }
-                    
-                    if (timetounit.getSelectedIndex() == 3) { //since there are two combo boxes in which the user will chose units, inside the 1st if, we are going to add 3 more if's whose conditions would be the selected entries of the second combobox. So the condition is if along with the from combobox 1st entry is chosen and in to combo box 1st entry is chosen then.
-                        timetotext.setText(String.valueOf(value)); //* is used for multiplication.
-                    }
-                    
-                    if (timetounit.getSelectedIndex() == 4) { //since there are two combo boxes in which the user will chose units, inside the 1st if, we are going to add 3 more if's whose conditions would be the selected entries of the second combobox. So the condition is if along with the from combobox 1st entry is chosen and in to combo box 1st entry is chosen then.
-                        timetotext.setText(String.valueOf(value * 60)); //* is used for multiplication.
-                    }
-
-                }
-                
-                if (timefromunit.getSelectedIndex() == 4) { //if the fromunitcombo 1st entry is selected by the user, then
-                    if (timetounit.getSelectedIndex() == 0) { //since there are two combo boxes in which the user will chose units, inside the 1st if, we are going to add 3 more if's whose conditions would be the selected entries of the second combobox. So the condition is if along with the from combobox 1st entry is chosen and in to combo box 1st entry is chosen then.
-                        timetotext.setText(String.valueOf(value /60 /60 /24 /7));
-                    }
-
-                    if (timetounit.getSelectedIndex() == 1) { //since there are two combo boxes in which the user will chose units, inside the 1st if, we are going to add 3 more if's whose conditions would be the selected entries of the second combobox. So the condition is if along with the from combobox 1st entry is chosen and in to combo box 1st entry is chosen then.
-                        timetotext.setText(String.valueOf(value /60 /60 /24)); //* is used for multiplication.
-                    }
-
-                    if (timetounit.getSelectedIndex() == 2) { //since there are two combo boxes in which the user will chose units, inside the 1st if, we are going to add 3 more if's whose conditions would be the selected entries of the second combobox. So the condition is if along with the from combobox 1st entry is chosen and in to combo box 1st entry is chosen then.
-                        timetotext.setText(String.valueOf(value /60 /60)); //* is used for multiplication.
-                    }
-                    
-                    if (timetounit.getSelectedIndex() == 3) { //since there are two combo boxes in which the user will chose units, inside the 1st if, we are going to add 3 more if's whose conditions would be the selected entries of the second combobox. So the condition is if along with the from combobox 1st entry is chosen and in to combo box 1st entry is chosen then.
-                        timetotext.setText(String.valueOf(value /60)); //* is used for multiplication.
-                    }
-                    
-                    if (timetounit.getSelectedIndex() == 4) { //since there are two combo boxes in which the user will chose units, inside the 1st if, we are going to add 3 more if's whose conditions would be the selected entries of the second combobox. So the condition is if along with the from combobox 1st entry is chosen and in to combo box 1st entry is chosen then.
-                        timetotext.setText(String.valueOf(value)); //* is used for multiplication.
-                    }
-
-                }
+                    // Kalkulasi
+                    float result = value * conversionFactors[fromIndex] / conversionFactors[toIndex];
+                    timetotext.setText(String.valueOf(result));      
             }
-        }); // This closing brace was missing. It closes the ActionListener.
-    } // This closing brace was missing. It closes the Time constructor.
-} // This closing brace was missing. It closes the Time class.
+        });
+    } 
+} 
