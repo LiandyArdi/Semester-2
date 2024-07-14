@@ -16,4 +16,5 @@ B. "Kopi"
 This is a coffee shop website called "Moreau Coffee." I used PHP to create an online ordering system.
 
 C. "Elbow_DBI_KMeans_KMedoids"
-This code processes total production data (in tons) and average area (in hectares) of chili peppers for the period 2006-2023 across 5 selected provinces, analyzed at the district level. The code includes measurements for the Elbow method, Davies-Bouldin Index, as well as K-Means and K-Medoids clustering.
+This code processes total production data (in tons) and average area (in hectares) of chili peppers for the period 2006-2023 across 5 selected provinces, analyzed at the district level.
+The code includes measurements for the Elbow method, Davies-Bouldin Index, as well as K-Means and K-Medoids clustering.
